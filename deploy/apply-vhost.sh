@@ -44,7 +44,7 @@ if [ "$code80" = "301" ] || [ "$code80" = "302" ]; then
   echo "    외부 방문자는 사이트를 열 수 없습니다."
   echo "    certbot 을 --redirect 로 다시 돌리지 마세요."
 fi
-for p in "" "members/" "TFNetPropX/" "OlinkWeb/"; do
+for p in "" "members/" "TFNetPropX/" "OlinkWeb/" "software/Opylink/"; do
   printf '  %-16s %s\n' "/$p" "$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 -H 'Host: ailab.mju.ac.kr' "http://127.0.0.1/$p" || echo 000)"
 done
 echo
