@@ -52,16 +52,29 @@ export const unmatchedAwardMembers: string[] = [
 /** 제목으로 논문과 상을 잇는다. 표기가 한 글자라도 다르면 매칭이 깨지므로 빌드에서 센다. */
 const normTitle = (t: string) => t.trim().toLowerCase().replace(/\s+/g, ' ');
 
-const AWARDS_BY_PAPER = new Map<string, Award[]>();
+const rawPublications: PublicationRaw[] = read<PublicationRaw[]>('publications.yaml') ?? [];
+
+/**
+ * 학회 발표를 확장한 저널 논문은 제목이 글자까지 같다. 그러면 상이 두 줄에 다 붙는다.
+ * 같은 제목이 여럿이면 수상 시점(월) 이전에 나온 것 중 가장 늦은 논문에만 붙인다 —
+ * 상은 그때 발표된 판에 준 것이다. 수상 전 논문이 없으면 가장 이른 것에 붙인다.
+ */
+const AWARDS_BY_PAPER = new Map<PublicationRaw, Award[]>();
 for (const a of awards) {
   if (!a.paper) continue;
   const key = normTitle(a.paper);
-  const list = AWARDS_BY_PAPER.get(key);
+  const month = (d: string | Date) => toISODate(d).slice(0, 7);
+  const same = rawPublications
+    .filter((p) => normTitle(p.title) === key)
+    .sort((x, y) => (month(x.date) < month(y.date) ? -1 : 1));
+  if (!same.length) continue;
+  const target = same.filter((p) => month(p.date) <= month(a.date)).pop() ?? same[0];
+  const list = AWARDS_BY_PAPER.get(target);
   if (list) list.push(a);
-  else AWARDS_BY_PAPER.set(key, [a]);
+  else AWARDS_BY_PAPER.set(target, [a]);
 }
 
-export const publications: Publication[] = (read<PublicationRaw[]>('publications.yaml') ?? [])
+export const publications: Publication[] = rawPublications
   .map((p) => {
     const date = toISODate(p.date);
     const venueInfo = VENUE_BY_NAME.get(p.venue) ?? null;
@@ -75,7 +88,7 @@ export const publications: Publication[] = (read<PublicationRaw[]>('publications
       // 1저자·교신저자 표기는 authors 순서에 맞춰 편다.
       authorRoles: deriveAuthorRoles(p, MEMBER_NAMES),
       // 논문상은 awards.yaml 의 paper 로 이어진다.
-      awards: AWARDS_BY_PAPER.get(normTitle(p.title)) ?? [],
+      awards: AWARDS_BY_PAPER.get(p) ?? [],
     };
   })
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
