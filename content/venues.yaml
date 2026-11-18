@@ -155,6 +155,15 @@
   quartile: Q1             # MEDICINE, GENERAL & INTERNAL · percentile 79.8%
   source: https://wos-journal.info/journalid/11564
 
+- name: 정보과학회 컴퓨팅의 실제 논문지
+  name_en: KIISE Transactions on Computing Practices
+  scope: domestic
+  kind: journal
+  publisher: Korean Institute of Information Scientists and Engineers
+  scie: false
+  note: KCI 등재지. SCIE 가 아니어서 JCR IF 가 없다
+  source: https://www.kiise.or.kr/e_journal/2026/11/KTCP/02.pdf
+
 # ---------- 컨퍼런스 ----------
 # 컨퍼런스에는 IF 가 없다. 필드를 만들지 말 것.
 

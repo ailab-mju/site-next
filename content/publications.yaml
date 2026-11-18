@@ -32,6 +32,16 @@
 #   저널 홈페이지. 컨퍼런스 논문은 교신저자 지정이 없는 경우가 많다.
 
 - title: >-
+    scRNA-seq 데이터 축소 기법을 이용한 환자 표현형 예측의 연산 경량화 분석
+  authors: [Yoobin Shin, Janghyun Noh, Minsik Oh]
+  corresponding: [Minsik Oh]   # 논문 첫 페이지 "(Corresponding author임)"
+  topics: [single-cell]
+  venue: 정보과학회 컴퓨팅의 실제 논문지
+  date: 2026-11-01          # 제32권 제11호(2026. 11). 발행월만 표기돼 있다
+  pages: 554-560
+  doi: https://doi.org/10.5626/KTCP.2026.32.11.554   # PDF 표기. 2026-11-18 현재 Crossref 미등록
+
+- title: >-
     scDECA: Integrating Gene-Cell interactions with Global Priors and Local
     Structures in Single-Cell Transcriptomics
   authors: [Myeongbin Oh, Minsik Oh]
