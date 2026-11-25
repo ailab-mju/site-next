@@ -1,10 +1,24 @@
 # 이 파일은 scripts/optimize-images.mjs 가 갱신한다.
 # title / date / caption 은 사람이 고쳐도 되고, 다음 실행 때 유지된다.
-#
-# 수상 내역은 캡션에 적지 말 것. content/awards.yaml 에서 같은 달의 항목이
-# 자동으로 붙는다 — 두 벌로 적으면 상 이름을 고칠 때 한쪽만 고쳐진다.
 # photos 와 cover 는 실제 파일 목록에서 파생되므로 손대지 말 것.
 
+- id: giw2026
+  title: BIOINFO/GIW ISCB-Asia 2026
+  date: 2026-11
+  caption: >-
+    Oral presentation by SeungHoo Song and poster presentations by DongSin Kim,
+    Gunho Choi, Myeongbin Oh, Myeongkwan Kim, and Yoobin Shin at the joint meeting
+    of the Korean Society for Bioinformatics annual conference, the 35th
+    International Conference on Genome Informatics, and ISCB-Asia in Seoul.
+  cover: group.webp
+  photos:
+    - group.webp
+    - oral_seunghoo_song.webp
+    - poster_dongsin_kim.webp
+    - poster_gunho_choi.webp
+    - poster_myeongbin_oh.webp
+    - poster_myeongkwan_kim.webp
+    - poster_yoobin_shin.webp
 - id: commencement2026
   title: 2026 Summer Commencement
   date: 2026-08
@@ -15,34 +29,6 @@
     - img_3010.webp
     - img_7217.webp
     - img_7232__1_.webp
-- id: bioinfo2024
-  title: BIOINFO 2024
-  date: 2024-10
-  caption: 2024 Annual Conference of the Korean Society for Bioinformatics.
-  cover: img_3816.webp
-  photos:
-    - img_3816.webp
-    - img_3817.webp
-    - img_3818.webp
-- id: bioinfo2025
-  title: BIOINFO 2025
-  date: 2025-10
-  caption: Poster presentations at the Korean Society for Bioinformatics annual conference.
-  cover: 2025_bioinfo_group_1.webp
-  photos:
-    - 2025_bioinfo_group_1.webp
-    - 2025_bioinfo_group_2.webp
-    - 2025_bioinfo_group_3.webp
-    - 2025_bioinfo_gunho_choi.webp
-    - 2025_bioinfo_jaeyun_park.webp
-    - 2025_bioinfo_janghyun_noh.webp
-    - 2025_bioinfo_jiyeong_shin.webp
-    - 2025_bioinfo_myeongbin_oh.webp
-    - poster_gunho_choi.webp
-    - poster_jaeyun_park.webp
-    - poster_janghyun_noh.webp
-    - poster_jiyeong_shin.webp
-    - poster_myeongbin_oh.webp
 - id: kcc2026
   title: KCC 2026
   date: 2026-06
@@ -68,6 +54,25 @@
     - 20251216_133530_1_.webp
     - img_5369.webp
     - img_9665_1_.webp
+- id: bioinfo2025
+  title: BIOINFO 2025
+  date: 2025-10
+  caption: Poster presentations at the Korean Society for Bioinformatics annual conference.
+  cover: 2025_bioinfo_group_1.webp
+  photos:
+    - 2025_bioinfo_group_1.webp
+    - 2025_bioinfo_group_2.webp
+    - 2025_bioinfo_group_3.webp
+    - 2025_bioinfo_gunho_choi.webp
+    - 2025_bioinfo_jaeyun_park.webp
+    - 2025_bioinfo_janghyun_noh.webp
+    - 2025_bioinfo_jiyeong_shin.webp
+    - 2025_bioinfo_myeongbin_oh.webp
+    - poster_gunho_choi.webp
+    - poster_jaeyun_park.webp
+    - poster_janghyun_noh.webp
+    - poster_jiyeong_shin.webp
+    - poster_myeongbin_oh.webp
 - id: kcc2025
   title: KCC 2025
   date: 2025-07
@@ -86,3 +91,12 @@
     - img_5400.webp
     - img_5410.webp
     - kcc2025__2_.webp
+- id: bioinfo2024
+  title: BIOINFO 2024
+  date: 2024-10
+  caption: 2024 Annual Conference of the Korean Society for Bioinformatics.
+  cover: img_3816.webp
+  photos:
+    - img_3816.webp
+    - img_3817.webp
+    - img_3818.webp
